@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="./script.js"></script>
+    </head>
+    <body>
+        <h1>Pet image getter</h1>
+        <button onclick="loadImages()">Get pet image</button>
+        <div class="grid">
+            <img id="pet-image1" src="" alt="pet image" />
+            <img id="pet-image2" src="" alt="pet image" />
+        </div>
+
+        <div id="modal">
+            <div id="modal-content">
+                <span id="close">&times;</span>
+                <h1>Fetch new dog images?</h1>
+                <p>Click 'Keep' if you want to keep the current dog images</p>
+                <p>Click 'Try again' if you want to fetch new dog images</p>
+                <button onclick="resolveModal('keep')">Keep</button>
+                <button onclick="resolveModal('try-again')">Try again</button>
+            </div>
+        </div>
+    </body>
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 1rem;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+        }
+
+        #modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 1rem;
+            width: 50%;
+            height: 50%;
+        }
+    </style>
+</html>
